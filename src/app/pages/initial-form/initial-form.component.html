@@ -1,0 +1,50 @@
+<div
+  class="max-w-sm mx-auto mt-10 p-6 border-2 border-gray-400 rounded-xl shadow-md text-center"
+>
+  <div class="py-4 mb-6 text-xl">Welcome Aboard</div>
+  <div class="mb-3.5">
+    <p class="text-left mb-2.5">Income</p>
+    <div *ngFor="let item of incomeItems; let i = index" class="flex gap-2">
+      <app-input
+        placeholder="Category"
+        type="select"
+        [options]="incomeOptions"
+      ></app-input>
+      <app-input placeholder="Amount" type="text"></app-input>
+    </div>
+    <div class="text-right -mt-6">
+      <a
+        href="#"
+        (click)="addIncomeItem(); $event.preventDefault()"
+        class="underline"
+        >add more +</a
+      >
+    </div>
+  </div>
+  <div class="mb-3.5">
+    <p class="text-left mb-2.5">Fixed Expenses</p>
+    <div
+      *ngFor="let item of fixedExpensesItems; let i = index"
+      class="flex gap-2"
+    >
+      <app-input
+        placeholder="Category"
+        type="select"
+        [options]="fixedExpensesOptions"
+        [extraClasses]="'w-35.5'"
+      ></app-input>
+      <app-input placeholder="Amount" type="text"></app-input>
+    </div>
+    <div class="text-right -mt-6">
+      <a
+        href="#"
+        (click)="addFixedExpensesItem(); $event.preventDefault()"
+        class="underline text-right"
+        >add more +</a
+      >
+    </div>
+  </div>
+  <div class="mt-10.5">
+    <app-button text="Next"></app-button>
+  </div>
+</div>
