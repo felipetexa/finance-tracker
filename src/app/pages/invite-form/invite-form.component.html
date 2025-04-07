@@ -1,0 +1,23 @@
+<div
+  class="max-w-sm mx-auto mt-10 p-6 border-2 border-gray-400 rounded-xl shadow-md text-center"
+>
+  <div class="py-4 mb-6 text-xl">Share your budget</div>
+  <div class="mb-3.5">
+    <p class="text-left mb-2.5">Add person</p>
+    <div *ngFor="let item of invitees; let i = index" class="flex gap-2">
+      <app-input placeholder="name" type="text"></app-input>
+      <app-input placeholder="e-mail" type="email"></app-input>
+    </div>
+    <div class="text-right -mt-6">
+      <a
+        href="#"
+        (click)="addInvitee(); $event.preventDefault()"
+        class="underline"
+        >add more +</a
+      >
+    </div>
+  </div>
+  <div class="mt-10.5">
+    <app-button text="Go to Dashboard"></app-button>
+  </div>
+</div>
